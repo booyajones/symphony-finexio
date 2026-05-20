@@ -194,14 +194,19 @@ def main() -> None:
     signal.signal(signal.SIGTERM, _handle_signal)
 
     # ── run ───────────────────────────────────────────────────────────
+    # Force UTF-8 on Windows so box drawing works; fall back to ASCII banner
+    import sys, io
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", line_buffering=True)
+    except AttributeError:
+        pass
+
     print(f"""
-╔══════════════════════════════════════════════╗
-║            Symphony  —  Finexio              ║
-║  tracker  : {cfg.tracker.kind:<32} ║
-║  repo     : {(cfg.tracker.repo or 'auto'):<32} ║
-║  agents   : {cfg.agent.max_concurrent_agents:<32} ║
-║  poll     : {cfg.polling.interval_ms}ms{'':<27} ║
-╚══════════════════════════════════════════════╝
+Symphony - Finexio
+  tracker  : {cfg.tracker.kind}
+  repo     : {cfg.tracker.repo or 'auto'}
+  agents   : {cfg.agent.max_concurrent_agents}
+  poll     : {cfg.polling.interval_ms}ms
 Press Ctrl+C to stop.
 """)
 

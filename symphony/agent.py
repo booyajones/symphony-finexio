@@ -101,12 +101,17 @@ class AgentSession:
             self._proc = subprocess.Popen(
                 cmd,
                 cwd=str(self.workspace_path),
+                stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
                 env=env,
                 bufsize=1,
+                encoding="utf-8",
             )
+            # Write prompt via stdin then close so the process sees EOF
+            self._proc.stdin.write(self.prompt)
+            self._proc.stdin.close()
 
             turn_timeout_s = self.cfg.turn_timeout_ms / 1000
             stall_timeout_s = self.cfg.stall_timeout_ms / 1000
@@ -157,22 +162,19 @@ class AgentSession:
             self.finished_at = self.finished_at or time.monotonic()
 
     def _build_command(self) -> list[str]:
-        """Build the claude CLI command."""
+        """Build the claude CLI command. Prompt is piped via stdin, not a positional arg."""
         cmd = [self.cfg.command]
 
-        # Non-interactive single-run mode
+        # Non-interactive single-run mode; prompt comes from stdin
         cmd += ["--print"]
 
         # Tool allowlist
         if self.cfg.allowed_tools:
             cmd += ["--allowedTools", ",".join(self.cfg.allowed_tools)]
 
-        # Extra args from config
+        # Extra args from config (skip --print to avoid duplicate)
         for arg in self.cfg.args:
-            if arg != "--print":  # avoid duplicate
+            if arg != "--print":
                 cmd.append(arg)
-
-        # The prompt goes last
-        cmd.append(self.prompt)
 
         return cmd

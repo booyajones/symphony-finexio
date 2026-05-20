@@ -8,3 +8,28 @@
 2026-05-19T21:44:43 INFO     symphony  active states: ['ready', 'in-progress']
 2026-05-19T21:44:43 INFO     symphony  max concurrent agents: 3
 2026-05-19T21:44:43 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:57:06 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T21:57:06 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T21:57:06 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:57:06 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:57:06 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:57:06 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\sfdc-ops-pro.md
+2026-05-19T21:57:06 INFO     symphony  tracker: github  repo: booyajones/sfdc-ops-pro
+2026-05-19T21:57:06 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:57:06 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:57:06 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:57:06 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-skills.md
+2026-05-19T21:57:06 INFO     symphony  tracker: github  repo: booyajones/finexio-skills
+2026-05-19T21:57:06 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:57:06 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:57:06 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:57:26 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T21:57:26 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T21:57:26 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:57:26 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:57:26 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:57:50 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T21:57:50 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T21:57:50 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:57:50 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:57:50 INFO     symphony  poll interval: 30000ms
