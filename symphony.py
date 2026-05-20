@@ -83,7 +83,8 @@ class StatusSurface:
 
     def print_summary(self, orchestrator: Orchestrator) -> None:
         summary = orchestrator.status_summary()
-        print("\n── Symphony Status ──────────────────────────────")
+        sep = "-" * 49
+        print(f"\n{sep}")
         print(f"  running  : {len(summary['running'])}")
         print(f"  retrying : {len(summary['retry_queue'])}")
         print(f"  completed: {summary['completed']}")
@@ -95,7 +96,7 @@ class StatusSurface:
             print("\n  Retry queue:")
             for r in summary["retry_queue"]:
                 print(f"    {r['identifier']:20s}  retry #{r['attempt']}  in {r['due_in_s']}s")
-        print("─────────────────────────────────────────────────\n")
+        print(f"{sep}\n")
 
 
 # ── main ──────────────────────────────────────────────────────────────
@@ -194,21 +195,7 @@ def main() -> None:
     signal.signal(signal.SIGTERM, _handle_signal)
 
     # ── run ───────────────────────────────────────────────────────────
-    # Force UTF-8 on Windows so box drawing works; fall back to ASCII banner
-    import sys, io
-    try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", line_buffering=True)
-    except AttributeError:
-        pass
-
-    print(f"""
-Symphony - Finexio
-  tracker  : {cfg.tracker.kind}
-  repo     : {cfg.tracker.repo or 'auto'}
-  agents   : {cfg.agent.max_concurrent_agents}
-  poll     : {cfg.polling.interval_ms}ms
-Press Ctrl+C to stop.
-""")
+    print(f"Symphony - Finexio | tracker={cfg.tracker.kind} repo={cfg.tracker.repo or 'auto'} agents={cfg.agent.max_concurrent_agents} poll={cfg.polling.interval_ms}ms | Ctrl+C to stop")
 
     try:
         orch.run()

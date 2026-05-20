@@ -33,3 +33,27 @@
 2026-05-19T21:57:50 INFO     symphony  active states: ['ready', 'in-progress']
 2026-05-19T21:57:50 INFO     symphony  max concurrent agents: 2
 2026-05-19T21:57:50 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:58:01 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T21:58:01 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T21:58:01 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T21:58:01 INFO     symphony  max concurrent agents: 2
+2026-05-19T21:58:01 INFO     symphony  poll interval: 30000ms
+2026-05-19T21:58:01 INFO     symphony.orchestrator  symphony orchestrator started
+2026-05-19T21:58:03 INFO     symphony.orchestrator  [#14] dispatching (attempt=None)
+2026-05-19T21:58:03 INFO     symphony.workspace  workspace created: C:\Users\chris\code\symphony-workspaces\finexio-portal-pro\_14
+2026-05-19T21:58:15 INFO     symphony.agent  [#14] launching: claude --print --allowedTools ...
+2026-05-19T21:58:21 WARNING  symphony.orchestrator  [#14] agent error: exit code 1
+Error: Input must be provided either through stdin or as a prompt argument when using --print
+2026-05-19T21:58:21 INFO     symphony.orchestrator  [#14] retry #1 in 2s: exit code 1
+Error: Input must be provided either through stdin or as a prompt argument when using --
+2026-05-19T22:00:16 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T22:00:16 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T22:00:16 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T22:00:16 INFO     symphony  max concurrent agents: 2
+2026-05-19T22:00:16 INFO     symphony  poll interval: 30000ms
+2026-05-19T22:00:16 INFO     symphony.orchestrator  symphony orchestrator started
+2026-05-19T22:01:43 INFO     symphony  workflow loaded: C:\Users\chris\Downloads\symphony-finexio\workflows\finexio-portal-pro.md
+2026-05-19T22:01:43 INFO     symphony  tracker: github  repo: booyajones/finexio-portal-pro
+2026-05-19T22:01:43 INFO     symphony  active states: ['ready', 'in-progress']
+2026-05-19T22:01:43 INFO     symphony  max concurrent agents: 2
+2026-05-19T22:01:43 INFO     symphony  poll interval: 30000ms
